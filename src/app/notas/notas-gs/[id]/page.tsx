@@ -1,75 +1,76 @@
 "use client";
 
-import { TipoNota } from "@/types";
+import { TipoNotaGS } from "@/types";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function EditarNota({ params }: { params: { id: number } }) {
-
   const navigate = useRouter();
 
-  const [nota, setNota] = useState<TipoNota>({
+  const [nota, setNota] = useState<TipoNotaGS>({
     id: 0,
     nomeAluno: "",
-    materia:"",
-    avaliacao:"",
-    nota: 0.0,
-    data: "",
-    feedback: ""
-});
+    materia: "",
+    linkGS: "", 
+    notaGS: 0.0,
+    descricaoGS: "",
+  });
 
   useEffect(() => {
-      const chamadaApi = async ()=>{
-        const response = await fetch(`http://localhost:3000/api/base-notas/${params.id}`);
-        const data = await response.json();
-        setNota(data);
-      }
-      chamadaApi();
-  }, [params])
+    const chamadaApi = async () => {
+      const response = await fetch(
+        `http://localhost:3000/api/base-notas/base-gs/${params.id}`
+      );
+      const data = await response.json();
+      setNota(data);
+    };
+    chamadaApi();
+  }, [params]);
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setNota((prev) => ({ ...prev, [name]: value }));
+  };
 
-  const handleChange = (e:React.ChangeEvent<HTMLInputElement>)=>{
-        //Realizando um destructuring no evento que é passado como parâmetro:
-        const { name, value } = e.target;
-        //Aqui estamos atualizando o estado do produto com o novo valor do campo que foi alterado pelo usuário ao digitar os dados neste mesmo campo.
-        setNota((prev) => ({ ...prev, [name]: value }));
-  }
-
-  const handleSubmit = async (e:React.FormEvent<HTMLFormElement>)=>{
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
-      const response = await fetch(`http://localhost:3000/api/base-notas/${params.id}`, {
-        method:"PUT",
-        headers:{
-          "Content-Type" : "application/json"
-        },
-        body: JSON.stringify(nota)
-      });
+      const response = await fetch(
+        `http://localhost:3000/api/base-notas/base-gs/${params.id}`,
+        {
+          method: "PATCH", 
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            nomeAluno: nota.nomeAluno,
+            materia: nota.materia,
+            linkGS: nota.linkGS,
+            notaGS: nota.notaGS,
+            descricaoGS: nota.descricaoGS,
+          }),
+        }
+      );
 
-      if(response.ok){
-        alert("Nota atualizada com sucesso.")
-        setNota({
-            id: 0,
-            nomeAluno: "",
-            materia:"",
-            avaliacao:"",
-            nota: 0.0,
-            data: "",
-            feedback: ""
-      });
-        navigate.push("/notas");
+      if (response.ok) {
+        alert("Nota atualizada com sucesso.");
+        navigate.push("/notas/notas-gs/gs"); 
+      } else {
+        const errorMessage = await response.text();
+        console.error("Erro ao atualizar a nota:", errorMessage);
+        alert(`Erro ao atualizar a nota: ${errorMessage}`);
       }
-
     } catch (error) {
-      console.error("Falha ao atualizar nota!",error);
+      console.error("Erro ao fazer a requisição:", error);
+      alert("Falha ao atualizar a nota!");
     }
+  };
 
-  }
 
   return (
     <div>
-      <h2>Atualizando Nota:</h2>
+      <h2>Atualizando Nota GS:</h2>
 
       <div>
         <form className="max-w-sm mx-auto" onSubmit={handleSubmit}>
@@ -80,12 +81,12 @@ export default function EditarNota({ params }: { params: { id: number } }) {
             <input
               type="string"
               id="idNome"
-              name="nome"
+              name="nomeAluno"
               value={nota.nomeAluno}
-              onChange={(e)=> handleChange(e)}
+              onChange={(e) => handleChange(e)}
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Nome do aluno"
-              
+              required
             />
           </div>
           <div className="mb-5">
@@ -97,7 +98,7 @@ export default function EditarNota({ params }: { params: { id: number } }) {
               id="idMateria"
               name="materia"
               value={nota.materia}
-              onChange={(e)=> handleChange(e)}
+              onChange={(e) => handleChange(e)}
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Nome da materia"
               required
@@ -106,16 +107,16 @@ export default function EditarNota({ params }: { params: { id: number } }) {
 
           <div className="mb-5">
             <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">
-              Avaliação
+              Link do Projeto
             </label>
             <input
               type="string"
-              id="idAvaliacao"
-              name="avaliacao"
-              value={nota.avaliacao}
-              onChange={(e)=> handleChange(e)}
+              id="idLink"
+              name="linkGS"
+              value={nota.linkGS}
+              onChange={(e) => handleChange(e)}
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Nome da avaliação"
+              placeholder="Link do Projeto"
               required
             />
           </div>
@@ -127,9 +128,9 @@ export default function EditarNota({ params }: { params: { id: number } }) {
             <input
               type="number"
               id="idNota"
-              name="nota"
-              value={nota.nota}
-              onChange={(e)=> handleChange(e)}
+              name="notaGS"
+              value={nota.notaGS}
+              onChange={(e) => handleChange(e)}
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Valor da nota"
               required
@@ -138,36 +139,19 @@ export default function EditarNota({ params }: { params: { id: number } }) {
 
           <div className="mb-5">
             <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">
-              Data
+              Descrição
             </label>
             <input
               type="string"
-              id="idData"
-              name="data"
-              value={nota.data}
-              onChange={(e)=> handleChange(e)}
+              id="idDescrição"
+              name="descricaoGS"
+              value={nota.descricaoGS}
+              onChange={(e) => handleChange(e)}
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Data"
+              placeholder="Descrição do Projeto"
               required
             />
           </div>
-
-          <div className="mb-5">
-            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">
-              Feed Back
-            </label>
-            <input
-              type="string"
-              id="idFeedback"
-              name="feedback"
-              value={nota.feedback}
-              onChange={(e)=> handleChange(e)}
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Feed Back"
-              required
-            />
-          </div>
-
 
           <div>
             <button

@@ -1,6 +1,6 @@
 "use client";
 
-import { TipoNota } from "@/types";
+import { TipoNotaGS } from "@/types";
 import { param } from "framer-motion/m";
 import Link from "next/link"
 import { useRouter } from "next/navigation";
@@ -10,17 +10,17 @@ export default function Produtos() {
 
     const navigate = useRouter();
 
-    const [notas, setNotas] = useState<TipoNota[]>([]);
+    const [notas, setNotas] = useState<TipoNotaGS[]>([]);
 
     const handleDelete = async (id:number) =>{
         try {
-            const response = await fetch(`http://localhost:3000/api/base-notas/${id}`,{
+            const response = await fetch(`http://localhost:3000/api/base-notas/base-gs/${id}`,{
                 method: 'DELETE',
             });
 
             if (response.ok) {
                 alert("Produto escluído com sucesso!");
-                window.location.href = "/notas";
+                window.location.href = "/notas/notas-gs/gs";
             }
 
         } catch (error) {
@@ -31,7 +31,7 @@ export default function Produtos() {
 
     useEffect(() => {
         const chamadaApi = async ()=>{
-            const response = await fetch("http://localhost:3000/api/base-notas");
+            const response = await fetch("http://localhost:3000/api/base-notas/base-gs/");
             const data = await response.json();
             setNotas(data);
         }
@@ -41,33 +41,31 @@ export default function Produtos() {
    
     return (
         <div>
-            <h2>CPS</h2>
-            <table className="tabelaProd">
+            <h2>Global Solution</h2>
+            <table className="tabelaNotas">
                 <thead>
                     <tr>
                         <th>Id</th>
                         <th>Nome Aluno</th>
                         <th>Materia</th>
-                        <th>Avaliação</th>
+                        <th>Link</th>
                         <th>Nota</th>
-                        <th>Data</th>
-                        <th>FeedBack</th>
+                        <th>Descrição</th>
                         <th>Editar | Excluir</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    {notas.map((p) => (
-                        <tr key={p.id}>
-                            <td>{p.id}</td>
-                            <td>{p.nomeAluno}</td>
-                            <td>{p.materia}</td>
-                            <td>{p.avaliacao}</td>
-                            <td>{p.nota}</td>
-                            <td>{p.data}</td>
-                            <td>{p.feedback}</td>
-                            <td><Link href={`/notas/${p.id}`}>Editar</Link> | 
-                            <Link href="#" onClick={()=>handleDelete(p.id)}> Excluir</Link></td>
+                    {notas.map((n) => (
+                        <tr key={n.id}>
+                            <td>{n.id}</td>
+                            <td>{n.nomeAluno}</td>
+                            <td>{n.materia}</td>
+                            <td><Link href={n.linkGS}>Link Projeto</Link></td>
+                            <td>{n.notaGS}</td>
+                            <td>{n.descricaoGS}</td>
+                            <td><Link href={`/notas/notas-gs/${n.id}`}>Editar</Link> | 
+                            <Link href="#" onClick={()=>handleDelete(n.id)}> Excluir</Link></td>
                         </tr>
                     ))}
                 </tbody>

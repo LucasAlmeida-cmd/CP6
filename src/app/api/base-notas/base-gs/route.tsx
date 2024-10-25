@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import {promises as fs} from "fs";
-import { TipoNota } from "@/types";
+import { TipoNotaGS } from "@/types";
 
 export async function GET() {   
     const file = await fs.readFile(process.cwd() + '/src/data/basecps.json','utf-8');
@@ -15,18 +15,18 @@ export async function POST(request:Request) {
     //não em objeto, por isso precisamos de fazer o parse para transformar em objeto.
     const file = await fs.readFile(process.cwd() + '/src/data/basecps.json','utf-8');
     //Realizando o parse de string para objeto literal
-    const produtos:TipoNota[] = JSON.parse(file);
+    const produtos:TipoNotaGS[] = JSON.parse(file);
     
     //Aqui estamos recebendo o request do cliente:
     //OBS: O cliente pode ser um testador de API que gere requisições do tipo POST, ou um formulário
     //que envia os dados para a API.
-    const{ id,nomeAluno,materia,avaliacao,nota, data, feedback} = await request.json();//Podemos receber os dados do request realizando
+    const{ id,nomeAluno, materia, linkGS, notaGS, descricaoGS} = await request.json();//Podemos receber os dados do request realizando
     //o parse do JSON para objeto literal e em seguida desestruturando ele, como no exemplo acima.
     //Ou podemos apenas realizar o parse e colocar em um objeto: como abaixo:
     //const dados = await request.json();
     
     //Tipando e colocando em um objeto os dados recebidos no request.
-    const notas = { id,nomeAluno,materia,avaliacao,nota, data, feedback} as TipoNota;
+    const notas = { id,nomeAluno, materia, linkGS, notaGS, descricaoGS} as TipoNotaGS;
 
     //Gerar um novo id para o produto
     notas.id = (produtos[ produtos.length - 1 ].id + 1);
