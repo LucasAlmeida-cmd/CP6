@@ -7,8 +7,10 @@ export default function Menu() {
                 <li> <Link href="/">Home</Link> </li>
                 <li> <Link href="/notas/notas-cps/cps">Check Points</Link> </li>
                 <li> <Link href="/notas/notas-gs/gs">Global Solution</Link> </li>
-                <li> <Link href="/notas/challenger">Challenger Sprints</Link></li>
+                <li> <Link href="/notas/notas-cs/cs">Challenger Sprints</Link></li>
             </ul>
         </nav>
+
+        
     )
 }

@@ -12,15 +12,30 @@ export default function EditarNota({ params }: { params: { id: number } }) {
     nomeAluno: "",
     materia: "",
     avaliacao: "",
+
     notaCP: 0.0,
     data: "",
     feedback: "",
+
     notaCP2: 0.0,
     data2: "",
     feedback2: "",
+
     notaCP3: 0.0,
     data3: "",
-    feedback3: ""
+    feedback3: "",
+
+    notaCP4: 0.0,
+    data4: "",
+    feedback4: "",
+    
+    notaCP5: 0.0,
+    data5: "",
+    feedback5: "",
+    
+    notaCP6: 0.0,
+    data6: "",
+    feedback6: ""
   });
 
   useEffect(() => {
@@ -54,15 +69,30 @@ export default function EditarNota({ params }: { params: { id: number } }) {
             nomeAluno: nota.nomeAluno,
             materia: nota.materia,
             avaliacao: nota.avaliacao,
+
             notaCP: nota.notaCP,
             data: nota.data,
             feedback: nota.feedback,
+
             notaCP2: nota.notaCP2,
             data2: nota.data2,
             feedback2: nota.feedback2,
+
             notaCP3: nota.notaCP3,
             data3: nota.data3,
             feedback3: nota.feedback3,
+
+            notaCP4: nota.notaCP4,
+            data4: nota.data4,
+            feedback4: nota.feedback4,
+
+            notaCP5: nota.notaCP5,
+            data5: nota.data5,
+            feedback5: nota.feedback5,
+
+            notaCP6: nota.notaCP6,
+            data6: nota.data6,
+            feedback6: nota.feedback6,
           }),
         }
       );
@@ -267,6 +297,145 @@ export default function EditarNota({ params }: { params: { id: number } }) {
               id="idFeedback"
               name="feedback3"
               value={nota.feedback3}
+              onChange={(e) => handleChange(e)}
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Feed Back"
+              required
+            />
+          </div>
+
+          <div className="mb-5">
+            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">
+              Nota 4:
+            </label>
+            <input
+              type="number"
+              id="idNota"
+              name="notaCP4"
+              value={nota.notaCP4}
+              onChange={(e) => handleChange(e)}
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Valor da nota"
+              required
+            />
+          </div>
+          <div className="mb-5">
+            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">
+              Data 4:
+            </label>
+            <input
+              type="string"
+              id="idData"
+              name="data4"
+              value={nota.data4}
+              onChange={(e) => handleChange(e)}
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Data"
+              required
+            />
+          </div>
+          <div className="mb-5">
+            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">
+              Feed Back 4:
+            </label>
+            <input
+              type="string"
+              id="idFeedback"
+              name="feedback4"
+              value={nota.feedback4}
+              onChange={(e) => handleChange(e)}
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Feed Back"
+              required
+            />
+          </div>
+
+          <div className="mb-5">
+            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">
+              Nota 5:
+            </label>
+            <input
+              type="number"
+              id="idNota"
+              name="notaCP5"
+              value={nota.notaCP5}
+              onChange={(e) => handleChange(e)}
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Valor da nota"
+              required
+            />
+          </div>
+          <div className="mb-5">
+            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">
+              Data 5:
+            </label>
+            <input
+              type="string"
+              id="idData"
+              name="data5"
+              value={nota.data5}
+              onChange={(e) => handleChange(e)}
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Data"
+              required
+            />
+          </div>
+          <div className="mb-5">
+            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">
+              Feed Back 5:
+            </label>
+            <input
+              type="string"
+              id="idFeedback"
+              name="feedback5"
+              value={nota.feedback5}
+              onChange={(e) => handleChange(e)}
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Feed Back"
+              required
+            />
+          </div>
+
+
+          <div className="mb-5">
+            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">
+              Nota 6:
+            </label>
+            <input
+              type="number"
+              id="idNota"
+              name="notaCP6"
+              value={nota.notaCP6}
+              onChange={(e) => handleChange(e)}
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Valor da nota"
+              required
+            />
+          </div>
+          <div className="mb-5">
+            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">
+              Data 6:
+            </label>
+            <input
+              type="string"
+              id="idData"
+              name="data6"
+              value={nota.data6}
+              onChange={(e) => handleChange(e)}
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Data"
+              required
+            />
+          </div>
+          <div className="mb-5">
+            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">
+              Feed Back 6:
+            </label>
+            <input
+              type="string"
+              id="idFeedback"
+              name="feedback6"
+              value={nota.feedback6}
               onChange={(e) => handleChange(e)}
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Feed Back"

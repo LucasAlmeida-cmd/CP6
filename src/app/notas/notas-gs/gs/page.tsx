@@ -70,13 +70,6 @@ export default function Produtos() {
                     ))}
                 </tbody>
 
-                <tfoot>
-                    <tr>
-                        <td colSpan={5}>
-                            Quantidade de registros: {notas.length}
-                        </td>
-                    </tr>
-                </tfoot>
             </table>
         </div>
     )
