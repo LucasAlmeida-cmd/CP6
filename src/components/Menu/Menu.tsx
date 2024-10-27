@@ -19,6 +19,9 @@ export default function Menu() {
         <li>
           <Link href="/notas/notas-cs/cs">Challenge Sprints</Link>
         </li>
+        <li>
+          <Link href="/notas/cad-notas" className="text-blue-500">Cadastro de Notas</Link>
+        </li>
       </ul>
       <ul className="sm:block lg:hidden w-[75%]">
         <Link href="/">
