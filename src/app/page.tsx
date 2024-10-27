@@ -42,22 +42,20 @@ export default function Home() {
       <div className="w-full border transition ease-in-out hover:border-blue-800 rounded py-5 px-[3vw]">
         <h1 className="font-semibold mb-5 lg:text-xl">Médias do Grupo por Tipo de Avaliação</h1>
         <div className="flex flex-col gap-3">
-          {/* div das barras */}
-
           <div className="flex gap-3 items-center">
             <h1 className="font-medium block w-[10%] break-words">Checkpoints</h1>
-            <div className="bg-blue-800 h-5 w-[60%] rounded-r-md"></div>
-            <p>Nota</p>
+            <div className="bg-blue-800 h-5 w-[78%] rounded-r-md"></div>
+            <p>78</p>
           </div>
           <div className="flex gap-3 items-center">
             <h1 className="font-medium block w-[10%] break-words">Global Solution</h1>
-            <div className="bg-blue-800 h-5 w-[75%] rounded-r-md"></div>
-            <p>Nota</p>
+            <div className="bg-blue-800 h-5 w-[90%] rounded-r-md"></div>
+            <p>90</p>
           </div>
           <div className="flex gap-3 items-center">
             <h1 className="font-medium block w-[10%] break-words">Challenge Sprints</h1>
-            <div className="bg-blue-800 h-5 w-[80%] rounded-r-md"></div>
-            <p>Nota</p>
+            <div className="bg-blue-800 h-5 w-[82%] rounded-r-md"></div>
+            <p>82</p>
           </div>
 
         </div>
