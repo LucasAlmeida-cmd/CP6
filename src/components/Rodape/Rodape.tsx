@@ -13,17 +13,17 @@ export default function Rodape() {
         Desenvolvido por:
         <ul className="flex flex-col gap-3">
           <li className="flex gap-3 items-center lg:h-[7vh] sm:h-[5vh]">
-            <Image src={fotoArthur} className="w-auto h-full rounded-full" />
+            <Image src={fotoArthur} className="w-auto h-full rounded-full" alt="foto do integrante"/>
             <p className="lg:font-semibold">Arthur Eduardo Luna Pulini</p>
           </li>
           <li className="flex gap-3 items-center lg:h-[7vh] sm:h-[5vh]">
-            <Image src={fotoLucas} className="w-auto h-full rounded-full" />
+            <Image src={fotoLucas} className="w-auto h-full rounded-full" alt="foto do integrante"/>
             <p className="lg:font-semibold">
               Lucas Almeida Fernandes de Moraes
             </p>
           </li>
           <li className="flex gap-3 items-center lg:h-[7vh] sm:h-[5vh]">
-            <Image src={fotoVictor} className="w-auto h-full rounded-full" />
+            <Image src={fotoVictor} className="w-auto h-full rounded-full" alt="foto do integrante"/>
             <p className="lg:font-semibold">Victor Nascimento Cosme</p>
           </li>
         </ul>

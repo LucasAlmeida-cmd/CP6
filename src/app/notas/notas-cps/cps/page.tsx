@@ -1,13 +1,10 @@
 "use client";
 
 import { TipoNotaCP } from "@/types";
-import { param } from "framer-motion/m";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Produtos() {
-  const navigate = useRouter();
 
   const [notas, setNotas] = useState<TipoNotaCP[]>([]);
 
@@ -25,7 +22,7 @@ export default function Produtos() {
         window.location.href = "/notas/notas-cps/cps";
       }
     } catch (error) {
-      console.error("Falha na exclusão!");
+      console.error("Falha na exclusão!", error);
     }
   };
 
