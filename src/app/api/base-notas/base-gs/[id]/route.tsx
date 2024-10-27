@@ -9,14 +9,20 @@ export async function GET(request: Request, { params }: { params: { id: number }
 
     const notas = dados.find(p => p.id == params.id);
 
-    return NextResponse.json(notas);
+    const headers = new Headers({
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type'
+    });
+
+    return NextResponse.json(notas, { headers });
 }
 
 export async function PATCH(request: Request, { params }: { params: { id: number } }) {
 
     const file = await fs.readFile(process.cwd() + '/src/data/basecps.json','utf-8');
     const notas: TipoNotaGS[] = JSON.parse(file);
-    
+
     const{nomeAluno, materia, linkGS, notaGS, descricaoGS} = await request.json();
 
     const indice = notas.findIndex(p => p.id == params.id);

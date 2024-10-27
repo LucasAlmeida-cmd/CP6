@@ -28,7 +28,7 @@ export default function Home() {
             </div>
           </div>
         </Link>
-        <Link href="/notas/notas-gs/gs">
+        <Link href="/notas/notas-cps/cps">
           <div className="border hover:border-blue-800 rounded lg:px-4 lg:py-2 flex flex-col hover:shadow-md transition ease-in-out ">
             <h2 className="font-semibold w-full text-center">
               Challenge Sprints

@@ -3,45 +3,46 @@
     "nomeAluno": "Arthur Eduardo Luna Pulini",
     "materia": "ARTIFICIAL INTELLIGENCE & CHATBOT",
     "avaliacao": "Check Point",
-    "notaCP": "10",
-    "data": "11/11/11",
-    "feedback": "boa",
-    "notaCP2": 10,
-    "data2": "11/11/11",
-    "feedback2": "boa",
-    "notaGS": "10",
+    "notaCP": 9.2,
+    "data": "05/04/2024",
+    "feedback": "Bom",
+    "notaGS": 98,
     "linkGS": "https://github.com/LucasAlmeida-cmd",
-    "descricaoGS": "teste",
-    "notaCP3": "10",
-    "data3": "11/11/11",
-    "feedback3": "boa",
-    "notaCP4": "10",
-    "data4": "11/11/11",
-    "feedback4": "10",
-    "notaCP5": "10",
-    "data5": "11/11/11",
-    "feedback5": "boa",
-    "notaCP6": "10",
-    "data6": "11/11/11",
-    "feedback6": "boa",
+    "descricaoGS": "Global Solution - ARTIFICIAL INTELLIGENCE & CHATBOT",
+    "notaCP2": 8.9,
+    "data2": "13/05/2024",
+    "feedback2": "Bom",
+    "notaCP3": 3.5,
+    "data3": "24/05/2024",
+    "feedback3": "Não realizada",
+    "notaCP4": "7.9",
+    "data4": "16/09/2024",
+    "feedback4": "Bom",
+    "notaCP5": "0",
+    "data5": "20/10/2024",
+    "feedback5": "Não realizada",
+    "notaCP6": "0",
+    "data6": "16/10/2024",
+    "feedback6": "Não realizada",
     "avaliacaoCS": "Challenge Sprints",
-    "notaCS1": 10,
-    "descricaoCS1": "coringando",
+    "notaCS1": 9.1,
+    "descricaoCS1": "Challenge Sprints - ARTIFICIAL INTELLIGENCE & CHATBOT",
     "notaCS2": 10,
-    "descricaoCS2": "descricaoCS",
-    "notaCS3": "10000",
-    "descricaoCS3": "descricaoCS3",
+    "descricaoCS2": "Challenge Sprints - ARTIFICIAL INTELLIGENCE & CHATBOT",
+    "notaCS3": 8.8,
+    "descricaoCS3": "Challenge Sprints - ARTIFICIAL INTELLIGENCE & CHATBOT",
     "notaCS4": 10,
-    "descricaoCS4": "descricaoCS4"
-}, {
+    "descricaoCS4": "Challenge Sprints - ARTIFICIAL INTELLIGENCE & CHATBOT"
+},
+    {
     "id": 2,
     "nomeAluno": "Arthur Eduardo Luna Pulini",
     "materia": "BUILDING RELATIONAL DATABASE",
     "avaliacao": "Check Point",
-    "notaCP": 10,
-    "data": "11/11/11",
+    "notaCP": 9.5,
+    "data": "10/04/24",
     "feedback": "boa",
-    "notaGS": 1000,
+    "notaGS": 6,
     "linkGS": "https://github.com/LucasAlmeida-cmd",
     "descricaoGS": "blablabla",
     "notaCP2": 10,
@@ -66,8 +67,8 @@
     "descricaoCS2": "descricaoCS",
     "notaCS3": 10,
     "descricaoCS3": "descricaoCS3",
-    "notaCS4": 10,
-    "descricaoCS4": "descricaoCS4"
+    "notaCS4": 0,
+    "descricaoCS4": "Não postado"
 }, {
     "id": 3,
     "nomeAluno": "Arthur Eduardo Luna Pulini",
@@ -243,8 +244,7 @@
     "descricaoCS3": "Challenge Sprints - ARTIFICIAL INTELLIGENCE & CHATBOT",
     "notaCS4": 10,
     "descricaoCS4": "Challenge Sprints - ARTIFICIAL INTELLIGENCE & CHATBOT"
-  },
-  {
+}, {
     "id": 8,
     "nomeAluno": "Lucas Almeida Fernandes de Moraes",
     "materia": "BUILDING RELATIONAL DATABASE",
@@ -279,8 +279,7 @@
     "descricaoCS3": "Challenge Sprints - BUILDING RELATIONAL DATABASE",
     "notaCS4": 0,
     "descricaoCS4": "Challenge Sprints - BUILDING RELATIONAL DATABASE"
-  },
-  {
+}, {
     "id": 9,
     "nomeAluno": "Lucas Almeida Fernandes de Moraes",
     "materia": "COMPUTATIONAL THINKING USING PYTHON",
@@ -315,8 +314,7 @@
     "descricaoCS3": "Challenge Sprints - COMPUTATIONAL THINKING USING PYTHON",
     "notaCS4": 0,
     "descricaoCS4": "Challenge Sprints - COMPUTATIONAL THINKING USING PYTHON"
-  },
-  {
+}, {
     "id": 10,
     "nomeAluno": "Lucas Almeida Fernandes de Moraes",
     "materia": "DOMAIN DRIVEN DESIGN USING JAVA",
@@ -351,8 +349,7 @@
     "descricaoCS3": "Challenge Sprints - DOMAIN DRIVEN DESIGN USING JAVA",
     "notaCS4": 0,
     "descricaoCS4": "Challenge Sprints - DOMAIN DRIVEN DESIGN USING JAVA"
-  },
-  {
+}, {
     "id": 11,
     "nomeAluno": "Lucas Almeida Fernandes de Moraes",
     "materia": "FRONT-END DESIGN ENGINEERING",
@@ -387,8 +384,7 @@
     "descricaoCS3": "Challenge Sprints - FRONT-END DESIGN ENGINEERING",
     "notaCS4": 0,
     "descricaoCS4": "Challenge Sprints - FRONT-END DESIGN ENGINEERING"
-  },
-  {
+}, {
     "id": 12,
     "nomeAluno": "Lucas Almeida Fernandes de Moraes",
     "materia": "SOFTWARE ENGINEERING AND BUSINESS MODEL",
@@ -423,8 +419,7 @@
     "descricaoCS3": "Challenge Sprints - FRONT-END DESIGN ENGINEERING",
     "notaCS4": 0,
     "descricaoCS4": "Challenge Sprints - FRONT-END DESIGN ENGINEERING"
-  },
-  {
+}, {
     "id": 13,
     "nomeAluno": "Victor Nascimento Cosme",
     "materia": "ARTIFICIAL INTELLIGENCE & CHATBOT",
@@ -438,7 +433,7 @@
     "notaCP2": 7.2,
     "data2": "13/05/2024",
     "feedback2": "Razoável",
-    "notaCP3": 5.0,
+    "notaCP3": 5,
     "data3": "24/05/2024",
     "feedback3": "Ruim",
     "notaCP4": 9.1,

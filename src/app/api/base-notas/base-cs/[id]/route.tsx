@@ -8,8 +8,13 @@ export async function GET(request: Request, { params }: { params: { id: number }
     const dados:TipoNotaCS[] = JSON.parse(file);
 
     const notas = dados.find(p => p.id == params.id);
+    const headers = new Headers({
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type'
+    });
 
-    return NextResponse.json(notas);
+    return NextResponse.json(notas, { headers });
 }
 
 export async function PATCH(request: Request, { params }: { params: { id: number } }) {

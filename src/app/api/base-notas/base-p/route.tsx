@@ -5,7 +5,14 @@ import { TipoCriacao } from "@/types";
 export async function GET() {   
     const file = await fs.readFile(process.cwd() + '/src/data/basecps.json','utf-8');
     const dados = JSON.parse(file);
-    return NextResponse.json(dados);
+
+    const headers = new Headers({
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type'
+    });
+
+    return NextResponse.json(dados, { headers });
 }
 
 export async function POST(request:Request) {
@@ -14,7 +21,7 @@ export async function POST(request:Request) {
 
     const file = await fs.readFile(process.cwd() + '/src/data/basecps.json','utf-8');
     //Realizando o parse de string para objeto literal
-    const produtos:TipoCriacao[] = JSON.parse(file);
+    const listaDeProdutos:TipoCriacao[] = JSON.parse(file);
 
     const{id,nomeAluno,materia,avaliacao,
         notaCP, data, feedback,
@@ -42,10 +49,10 @@ export async function POST(request:Request) {
         descricaoCS4, notaCS4,
         linkGS, notaGS, descricaoGS} as TipoCriacao;
 
-    produto.id = (produtos[ produtos.length - 1 ].id + 1);
+    produto.id = (listaDeProdutos[ listaDeProdutos.length - 1 ].id + 1);
 
-    produtos.push(produto);
-    const fileCreated = JSON.stringify(produtos);
+    listaDeProdutos.push(produto);
+    const fileCreated = JSON.stringify(listaDeProdutos);
     await fs.writeFile(process.cwd() + '/src/data/basecps.json',fileCreated);
         
     return NextResponse.json(produto,{status:201});

@@ -18,7 +18,6 @@ export async function GET() {
 
 export async function POST(request:Request) {
 
-
     const file = await fs.readFile(process.cwd() + '/src/data/basecps.json','utf-8');
 
     const listaDeNotas:TipoNotaCP[] = JSON.parse(file);
@@ -43,5 +42,4 @@ export async function POST(request:Request) {
     await fs.writeFile(process.cwd() + '/src/data/basecps.json',fileCreated);
         
     return NextResponse.json(notas,{status:201});
-
 }

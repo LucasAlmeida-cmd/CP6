@@ -8,12 +8,10 @@ export default function Produtos() {
 
   const [notas, setNotas] = useState<TipoNotaCP[]>([]);
 
-  
-
   const handleDelete = async (id: number) => {
     try {
       const response = await fetch(
-        `/api/base-notas/base-cps/${id}`,
+        `http://localhost:3000/api/base-notas/base-cps/${id}`,
         {
           method: "DELETE",
         }
@@ -31,7 +29,7 @@ export default function Produtos() {
   useEffect(() => {
     const chamadaApi = async () => {
       const response = await fetch(
-        "/api/base-notas/base-cps/"
+        "http://localhost:3000/api/base-notas/base-cps/"
       );
       const data = await response.json();
       setNotas(data);
