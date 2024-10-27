@@ -40,37 +40,40 @@ export default function Produtos() {
     
    
     return (
-        <div>
-            <h2>Global Solution</h2>
-            <table className="tabelaNotas">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Nome Aluno</th>
-                        <th>Materia</th>
-                        <th>Link</th>
-                        <th>Nota</th>
-                        <th>Descrição</th>
-                        <th>Editar | Excluir</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    {notas.map((n) => (
-                        <tr key={n.id}>
-                            <td>{n.id}</td>
-                            <td>{n.nomeAluno}</td>
-                            <td>{n.materia}</td>
-                            <td><Link href={n.linkGS}>Link Projeto</Link></td>
-                            <td>{n.notaGS}</td>
-                            <td>{n.descricaoGS}</td>
-                            <td><Link href={`/notas/notas-gs/${n.id}`}>Editar</Link> | 
-                            <Link href="#" onClick={()=>handleDelete(n.id)}> Excluir</Link></td>
+        <main className="border px-[10%] py-[7vh] flex flex-col border-red-600 w-full">
+            <h2 className="lg:text-xl lg:font-bold">Global Solution</h2>
+            <div className="mb-7">
+                <table className="table-border">
+                    <thead>
+                        <tr>
+                            <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Id</th>
+                            <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Nome Aluno</th>
+                            <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Materia</th>
+                            <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Link</th>
+                            <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Nota</th>
+                            <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Descrição</th>
+                            <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Editar | Excluir</th>
                         </tr>
-                    ))}
-                </tbody>
+                    </thead>
 
-            </table>
-        </div>
+                    <tbody>
+                        {notas.map((n) => (
+                            <tr key={n.id}>
+                                <td className="border border-slate-500 px-1 text-center">{n.id}</td>
+                                <td className="border border-slate-500 px-1 text-center">{n.nomeAluno}</td>
+                                <td className="border border-slate-500 px-1 text-center">{n.materia}</td>
+                                <td className="border border-slate-500 px-1 text-center"><Link href={n.linkGS}>Link Projeto</Link></td>
+                                <td className="border border-slate-500 px-1 text-center">{n.notaGS}</td>
+                                <td className="border border-slate-500 px-1 text-center">{n.descricaoGS}</td>
+                                <td className="border border-slate-500 px-1 text-center"><Link href={`/notas/notas-gs/${n.id}`}>Editar</Link> | 
+                                <Link href="#" onClick={()=>handleDelete(n.id)}> Excluir</Link></td>
+                            </tr>
+                        ))}
+                    </tbody>
+
+                </table>
+            </div>
+            
+        </main>
     )
 }
