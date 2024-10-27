@@ -59,7 +59,7 @@ export default function Home() {
             <div className="bg-blue-800 h-5 w-[80%] rounded-r-md"></div>
             <p>Nota</p>
           </div>
-          
+
         </div>
       </div>
     </main>
