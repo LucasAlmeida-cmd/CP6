@@ -40,62 +40,52 @@ export default function Produtos() {
     
    
     return (
-        <div>
-            <h2>Challenge Sprints</h2>
-            
-            <table className="tabelaProd">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Nome Aluno</th>
-                        <th>Materia</th>
-                        <th>Avaliação</th>
-
-                        <th>Descrição 1:</th>
-                        <th>Nota 1:</th>
-
-                        <th>Descrição 2:</th>
-                        <th>Nota 2:</th>
-       
-                        <th>Descrição 3:</th>
-                        <th>Nota 3:</th>
-
-                        <th>Descrição 4:</th>
-                        <th>Nota 4:</th>
-    
-                        <th>Editar | Excluir</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    {notas.map((n) => (
-                        <tr key={n.id}>
-                            <td>{n.id}</td>
-                            <td>{n.nomeAluno}</td>
-                            <td>{n.materia}</td>
-                            <td>{n.avaliacaoCS}</td>  
-                            <td>{n.descricaoCS1}</td>
-                            <td>{n.notaCS1}</td>
-                            <td>{n.descricaoCS2}</td>
-                            <td>{n.notaCS2}</td>
-                            <td>{n.descricaoCS3}</td>
-                            <td>{n.notaCS3}</td>
-                            <td>{n.descricaoCS4}</td>
-                            <td>{n.notaCS4}</td>
-                            <td><Link href={`/notas/notas-cs/${n.id}`}>Editar</Link> | 
-                            <Link href="#" onClick={()=>handleDelete(n.id)}> Excluir</Link></td>
+        <main className="border px-[10%] py-[7vh] flex flex-col border-red-600 w-full">
+            <h2 className="lg:text-xl lg:font-bold">Challenge Sprints</h2>
+            <div className="mb-7">
+                <table className="table-border">
+                    <thead>
+                        <tr>
+                            <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Id</th>
+                            <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Nome Aluno</th>
+                            <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Materia</th>
+                            <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Avaliação</th>
+                            <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Descrição 1:</th>
+                            <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Nota 1:</th>
+                            <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Descrição 2:</th>
+                            <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Nota 2:</th>
+                            <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Descrição 3:</th>
+                            <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Nota 3:</th>
+                            <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Descrição 4:</th>
+                            <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Nota 4:</th>
+                            <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Editar | Excluir</th>
                         </tr>
-                    ))}
-                </tbody>
+                    </thead>
 
-                <tfoot>
-                    <tr>
-                        <td colSpan={5}>
-                            Quantidade de registros: {notas.length}
-                        </td>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
+                    <tbody>
+                        {notas.map((n) => (
+                            <tr key={n.id}>
+                                <td className="border border-slate-500 px-1 text-center">{n.id}</td>
+                                <td className="border border-slate-500 px-1 text-center">{n.nomeAluno}</td>
+                                <td className="border border-slate-500 px-1 text-center">{n.materia}</td>
+                                <td className="border border-slate-500 px-1 text-center">{n.avaliacaoCS}</td>  
+                                <td className="border border-slate-500 px-1 text-center">{n.descricaoCS1}</td>
+                                <td className="border border-slate-500 px-1 text-center">{n.notaCS1}</td>
+                                <td className="border border-slate-500 px-1 text-center">{n.descricaoCS2}</td>
+                                <td className="border border-slate-500 px-1 text-center">{n.notaCS2}</td>
+                                <td className="border border-slate-500 px-1 text-center">{n.descricaoCS3}</td>
+                                <td className="border border-slate-500 px-1 text-center">{n.notaCS3}</td>
+                                <td className="border border-slate-500 px-1 text-center">{n.descricaoCS4}</td>
+                                <td className="border border-slate-500 px-1 text-center">{n.notaCS4}</td>
+                                <td className="border border-slate-500 px-1 text-center"><Link href={`/notas/notas-cs/${n.id}`}>Editar</Link> | 
+                                <Link href="#" onClick={()=>handleDelete(n.id)}> Excluir</Link></td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+
+            </div>
+            
+        </main>
     )
 }
