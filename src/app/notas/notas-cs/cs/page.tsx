@@ -40,7 +40,7 @@ export default function Produtos() {
     
    
     return (
-        <main className="border px-[10%] py-[7vh] flex flex-col border-red-600 w-full">
+        <main className="px-[10%] py-[7vh] flex flex-col  w-full">
             <h2 className="lg:text-xl lg:font-bold">Challenge Sprints</h2>
             <div className="mb-7">
                 <table className="table-border">

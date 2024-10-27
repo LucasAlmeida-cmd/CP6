@@ -41,7 +41,7 @@ export default function Produtos() {
   }, []);
 
   return (
-    <main className="border px-[10%] py-[7vh] flex flex-col border-red-600 w-full">
+    <main className="px-[10%] py-[7vh] flex flex-col w-full">
       <h1 className="lg:text-xl lg:font-bold">Notas dos Checkpoints</h1>
       <div className="mb-7">
         <h2 className="lg:text-lg lg:font-semibold">1º Semestre</h2>

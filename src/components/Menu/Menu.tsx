@@ -24,7 +24,7 @@ export default function Menu() {
         </li>
       </ul>
       <ul className="sm:block lg:hidden w-[75%]">
-        <Link href="/">
+        <Link href="/menu-mobile">
           <Image
             src={imagemMenu}
             className="w-full h-auto"
