@@ -21,7 +21,13 @@ export async function POST(request:Request) {
     //OBS: O cliente pode ser um testador de API que gere requisições do tipo POST, ou um formulário
     //que envia os dados para a API.
 
-    const{ id,nomeAluno,materia,avaliacao,notaCP, data, feedback,notaCP2, data2, feedback2, notaCP3, data3, feedback3,notaCP4, data4, feedback4,notaCP5, data5, feedback5,notaCP6, data6, feedback6} = await request.json();//Podemos receber os dados do request realizando
+    const{ id,nomeAluno,materia,avaliacao,
+        notaCP, data, feedback,
+        notaCP2, data2, feedback2, 
+        notaCP3, data3, feedback3,
+        notaCP4, data4, feedback4,
+        notaCP5, data5, feedback5,
+        notaCP6, data6, feedback6} = await request.json();//Podemos receber os dados do request realizando
     //o parse do JSON para objeto literal e em seguida desestruturando ele, como no exemplo acima.
     //Ou podemos apenas realizar o parse e colocar em um objeto: como abaixo:
     //const dados = await request.json();
