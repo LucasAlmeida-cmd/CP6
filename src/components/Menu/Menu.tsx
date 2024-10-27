@@ -1,16 +1,35 @@
-import Link from 'next/link'
+import Link from "next/link";
+import imagemMenu from "@/img/icone-menu.png";
+import Image from "next/image";
 
 export default function Menu() {
-    return (
-        <nav className='menu'>
-            <ul>
-                <li> <Link href="/">Home</Link> </li>
-                <li> <Link href="/notas/notas-cps/cps">Check Points</Link> </li>
-                <li> <Link href="/notas/notas-gs/gs">Global Solution</Link> </li>
-                <li> <Link href="/notas/notas-cs/cs">Challenger Sprints</Link></li>
-            </ul>
-        </nav>
-
+  return (
+    <nav className="h-full lg:w-full sm:w-fit">
+      <ul className="lg:gap-5 lg:font-semibold sm:hidden lg:flex">
+        <li>
+          <Link href="/">Home</Link>
+        </li>
+        <li>
+          <Link href="/notas/notas-cps/cps">Checkpoints</Link>
+        </li>
+        <li>
+          <Link href="/notas/notas-gs/gs">Global Solution</Link>
+        </li>
         
-    )
+        <li>
+          <Link href="/notas/notas-cs/cs">Challenge Sprints</Link>
+        </li>
+      </ul>
+      <ul className="sm:block lg:hidden w-[75%]">
+        <Link href="/">
+          <Image
+            src={imagemMenu}
+            className="w-full h-auto"
+            alt="ícone de menu"
+          />
+        </Link>
+      </ul>
+    
+    </nav>
+  );
 }
