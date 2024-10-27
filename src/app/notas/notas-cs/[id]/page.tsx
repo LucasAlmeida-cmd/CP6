@@ -81,13 +81,14 @@ export default function EditarNota({ params }: { params: { id: number } }) {
   };
 
   return (
-    <div>
-      <h2>Atualizando Nota:</h2>
+    <main className="px-[10%] py-[7vh] flex flex-col w-full">
+      <h2 className="text-xl font-bold mb-7">Atualizando Nota:</h2>
+      
+      <form className="w-full" onSubmit={handleSubmit}>
+        <fieldset className="grid grid-cols-2 gap-x-[10%] w-full">
 
-      <div>
-        <form className="max-w-sm mx-auto" onSubmit={handleSubmit}>
           <div className="mb-5">
-            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">
+            <label className="block mb-2 text-sm font-medium text-gray-900">
               Nome Aluno
             </label>
             <input
@@ -96,12 +97,12 @@ export default function EditarNota({ params }: { params: { id: number } }) {
               name="nomeAluno"
               value={nota.nomeAluno}
               onChange={(e) => handleChange(e)}
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-3"
               placeholder="Nome do aluno"
             />
           </div>
           <div className="mb-5">
-            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">
+            <label className="block mb-2 text-sm font-medium text-gray-900 ">
               Materia
             </label>
             <input
@@ -110,14 +111,14 @@ export default function EditarNota({ params }: { params: { id: number } }) {
               name="materia"
               value={nota.materia}
               onChange={(e) => handleChange(e)}
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-3"
               placeholder="Nome da materia"
               required
             />
           </div>
 
           <div className="mb-5">
-            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">
+            <label className="block mb-2 text-sm font-medium text-gray-900 ">
               Avaliação  
             </label>
             <input
@@ -126,14 +127,14 @@ export default function EditarNota({ params }: { params: { id: number } }) {
               name="avaliacaoCS"
               value={nota.avaliacaoCS}
               onChange={(e) => handleChange(e)}
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-3"
               placeholder="Nome da avaliação"
               required
             />
           </div>
 
           <div className="mb-5">
-            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">
+            <label className="block mb-2 text-sm font-medium text-gray-900 ">
               Descrição atividade 1:
             </label>
             <input
@@ -142,13 +143,13 @@ export default function EditarNota({ params }: { params: { id: number } }) {
               name="descricaoCS1"
               value={nota.descricaoCS1}
               onChange={(e) => handleChange(e)}
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-3"
               placeholder="Descrição atividade "
               required
             />
           </div>
           <div className="mb-5">
-            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">
+            <label className="block mb-2 text-sm font-medium text-gray-900 ">
               Nota 1:
             </label>
             <input
@@ -157,7 +158,7 @@ export default function EditarNota({ params }: { params: { id: number } }) {
               name="notaCS1"
               value={nota.notaCS1}
               onChange={(e) => handleChange(e)}
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-3"
               placeholder="Valor da nota"
               required
             />
@@ -165,7 +166,7 @@ export default function EditarNota({ params }: { params: { id: number } }) {
 
 
           <div className="mb-5">
-            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">
+            <label className="block mb-2 text-sm font-medium text-gray-900 ">
               Descrição atividade 2:
             </label>
             <input
@@ -174,13 +175,13 @@ export default function EditarNota({ params }: { params: { id: number } }) {
               name="descricaoCS2"
               value={nota.descricaoCS2}
               onChange={(e) => handleChange(e)}
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-3"
               placeholder="Descrição atividade"
               required
             />
           </div>
           <div className="mb-5">
-            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">
+            <label className="block mb-2 text-sm font-medium text-gray-900 ">
               Nota 2:
             </label>
             <input
@@ -189,7 +190,7 @@ export default function EditarNota({ params }: { params: { id: number } }) {
               name="notaCS2"
               value={nota.notaCS2}
               onChange={(e) => handleChange(e)}
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-3"
               placeholder="Valor da nota"
               required
             />
@@ -197,7 +198,7 @@ export default function EditarNota({ params }: { params: { id: number } }) {
 
 
           <div className="mb-5">
-            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">
+            <label className="block mb-2 text-sm font-medium text-gray-900 ">
               Descrição atividade 3:
             </label>
             <input
@@ -206,13 +207,13 @@ export default function EditarNota({ params }: { params: { id: number } }) {
               name="descricaoCS3"
               value={nota.descricaoCS3}
               onChange={(e) => handleChange(e)}
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-3"
               placeholder="Descrição atividade"
               required
             />
           </div>
           <div className="mb-5">
-            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">
+            <label className="block mb-2 text-sm font-medium text-gray-900 ">
               Nota 3:
             </label>
             <input
@@ -221,14 +222,14 @@ export default function EditarNota({ params }: { params: { id: number } }) {
               name="notaCS3"
               value={nota.notaCS3}
               onChange={(e) => handleChange(e)}
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-3"
               placeholder="Valor da nota"
               required
             />
           </div>
 
           <div className="mb-5">
-            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">
+            <label className="block mb-2 text-sm font-medium text-gray-900 ">
               Descrição atividade 4:
             </label>
             <input
@@ -237,13 +238,13 @@ export default function EditarNota({ params }: { params: { id: number } }) {
               name="descricaoCS4"
               value={nota.descricaoCS4}
               onChange={(e) => handleChange(e)}
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-3"
               placeholder="Descrição atividade"
               required
             />
           </div>
           <div className="mb-5">
-            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">
+            <label className="block mb-2 text-sm font-medium text-gray-900 ">
               Nota 4:
             </label>
             <input
@@ -252,27 +253,22 @@ export default function EditarNota({ params }: { params: { id: number } }) {
               name="notaCS4"
               value={nota.notaCS4}
               onChange={(e) => handleChange(e)}
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-3"
               placeholder="Valor da nota"
               required
             />
           </div>
-
-
-          
-
-          
-
-          <div>
-            <button
-              type="submit"
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              Alterar
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
+        </fieldset>
+        <div>
+          <button
+            type="submit"
+            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            Alterar
+          </button>
+        </div>
+      </form>
+      
+    </main>
   );
 }
