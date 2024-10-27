@@ -41,106 +41,109 @@ export default function Produtos() {
   }, []);
 
   return (
-    <div>
-      <h2>Check Points</h2>
-
-      <h2>1 Semestre</h2>
-      <table className="tabelaProd">
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Nome Aluno</th>
-            <th>Materia</th>
-            <th>Avaliação</th>
-            <th>Nota 1:</th>
-            <th>Data 1:</th>
-            <th>FeedBack 1:</th>
-            <th>Nota 2:</th>
-            <th>Data 2:</th>
-            <th>FeedBack 2:</th>
-            <th>Nota 3:</th>
-            <th>Data 3:</th>
-            <th>FeedBack 3:</th>
-            <th>Editar | Excluir</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          {notas.map((n) => (
-            <tr key={n.id}>
-              <td>{n.id}</td>
-              <td>{n.nomeAluno}</td>
-              <td>{n.materia}</td>
-              <td>{n.avaliacao}</td>
-              <td>{n.notaCP}</td>
-              <td>{n.data}</td>
-              <td>{n.feedback}</td>
-              <td>{n.notaCP2}</td>
-              <td>{n.data2}</td>
-              <td>{n.feedback2}</td>
-              <td>{n.notaCP3}</td>
-              <td>{n.data3}</td>
-              <td>{n.feedback3}</td>
-              <td>
-                <Link href={`/notas/notas-cps/${n.id}`}>Editar</Link> |
-                <Link href="#" onClick={() => handleDelete(n.id)}>
-                  {" "}
-                  Excluir
-                </Link>
-              </td>
+    <main className="border px-[10%] py-[7vh] flex flex-col border-red-600 w-full">
+      <h1 className="lg:text-xl lg:font-bold">Notas dos Checkpoints</h1>
+      <div className="mb-7">
+        <h2 className="lg:text-lg lg:font-semibold">1º Semestre</h2>
+        <table className="table-border">
+          <thead>
+            <tr>
+              <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Id</th>
+              <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Nome Aluno</th>
+              <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Materia</th>
+              <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Avaliação</th>
+              <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Nota 1:</th>
+              <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Data 1:</th>
+              <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">FeedBack 1:</th>
+              <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Nota 2:</th>
+              <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Data 2:</th>
+              <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">FeedBack 2:</th>
+              <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Nota 3:</th>
+              <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Data 3:</th>
+              <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">FeedBack 3:</th>
+              <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Editar | Excluir</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
 
-      <h2>2 Semestre</h2>
-      <table className="tabelaProd">
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Nome Aluno</th>
-            <th>Materia</th>
-            <th>Avaliação</th>
-            <th>Nota 4:</th>
-            <th>Data 4:</th>
-            <th>FeedBack 4:</th>
-            <th>Nota 5:</th>
-            <th>Data 5:</th>
-            <th>FeedBack 5:</th>
-            <th>Nota 6:</th>
-            <th>Data 6:</th>
-            <th>FeedBack 6:</th>
-            <th>Editar | Excluir</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          {notas.map((n) => (
-            <tr key={n.id}>
-              <td>{n.id}</td>
-              <td>{n.nomeAluno}</td>
-              <td>{n.materia}</td>
-              <td>{n.avaliacao}</td>
-              <td>{n.notaCP4}</td>
-              <td>{n.data4}</td>
-              <td>{n.feedback4}</td>
-              <td>{n.notaCP5}</td>
-              <td>{n.data5}</td>
-              <td>{n.feedback5}</td>
-              <td>{n.notaCP6}</td>
-              <td>{n.data6}</td>
-              <td>{n.feedback6}</td>
-              <td>
-                <Link href={`/notas/notas-cps/${n.id}`}>Editar</Link> |
-                <Link href="#" onClick={() => handleDelete(n.id)}>
-                  {" "}
-                  Excluir
-                </Link>
-              </td>
+          <tbody>
+            {notas.map((n) => (
+              <tr key={n.id}>
+                <td className="border border-slate-500 px-1 text-center">{n.id}</td>
+                <td className="border border-slate-500 px-1 text-center">{n.nomeAluno}</td>
+                <td className="border border-slate-500 px-1 text-center">{n.materia}</td>
+                <td className="border border-slate-500 px-1 text-center">{n.avaliacao}</td>
+                <td className="border border-slate-500 px-1 text-center">{n.notaCP}</td>
+                <td className="border border-slate-500 px-1 text-center">{n.data}</td>
+                <td className="border border-slate-500 px-1 text-center">{n.feedback}</td>
+                <td className="border border-slate-500 px-1 text-center">{n.notaCP2}</td>
+                <td className="border border-slate-500 px-1 text-center">{n.data2}</td>
+                <td className="border border-slate-500 px-1 text-center">{n.feedback2}</td>
+                <td className="border border-slate-500 px-1 text-center">{n.notaCP3}</td>
+                <td className="border border-slate-500 px-1 text-center">{n.data3}</td>
+                <td className="border border-slate-500 px-1 text-center">{n.feedback3}</td>
+                <td className="border border-slate-500 px-1 text-center">
+                  <Link href={`/notas/notas-cps/${n.id}`}>Editar</Link> |
+                  <Link href="#" onClick={() => handleDelete(n.id)}>
+                    {" "}
+                    Excluir
+                  </Link>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      
+      <div>
+        <h2 className="lg:text-lg lg:font-semibold">2º Semestre</h2>
+        <table className="tabelaProd">
+          <thead>
+            <tr>
+              <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Id</th>
+              <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Nome Aluno</th>
+              <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Materia</th>
+              <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Avaliação</th>
+              <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Nota 4:</th>
+              <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Data 4:</th>
+              <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">FeedBack 4:</th>
+              <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Nota 5:</th>
+              <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Data 5:</th>
+              <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">FeedBack 5:</th>
+              <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Nota 6:</th>
+              <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Data 6:</th>
+              <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">FeedBack 6:</th>
+              <th className="border border-slate-300 bg-slate-200 whitespace-nowrap px-3 py-1">Editar | Excluir</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+          </thead>
+
+          <tbody>
+            {notas.map((n) => (
+              <tr key={n.id}>
+                <td className="border border-slate-500 px-1 text-center">{n.id}</td>
+                <td className="border border-slate-500 px-1 text-center">{n.nomeAluno}</td>
+                <td className="border border-slate-500 px-1 text-center">{n.materia}</td>
+                <td className="border border-slate-500 px-1 text-center">{n.avaliacao}</td>
+                <td className="border border-slate-500 px-1 text-center">{n.notaCP4}</td>
+                <td className="border border-slate-500 px-1 text-center">{n.data4}</td>
+                <td className="border border-slate-500 px-1 text-center">{n.feedback4}</td>
+                <td className="border border-slate-500 px-1 text-center">{n.notaCP5}</td>
+                <td className="border border-slate-500 px-1 text-center">{n.data5}</td>
+                <td className="border border-slate-500 px-1 text-center">{n.feedback5}</td>
+                <td className="border border-slate-500 px-1 text-center">{n.notaCP6}</td>
+                <td className="border border-slate-500 px-1 text-center">{n.data6}</td>
+                <td className="border border-slate-500 px-1 text-center">{n.feedback6}</td>
+                <td className="border border-slate-500 px-1 text-center">
+                  <Link href={`/notas/notas-cps/${n.id}`}>Editar</Link> |
+                  <Link href="#" onClick={() => handleDelete(n.id)}>
+                    {" "}
+                    Excluir
+                  </Link>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </main>
   );
 }
