@@ -13,7 +13,7 @@ export default function Produtos() {
   const handleDelete = async (id: number) => {
     try {
       const response = await fetch(
-        `/src/app/api/base-notas/base-cps/${id}`,
+        `/api/base-notas/base-cps/${id}`,
         {
           method: "DELETE",
         }
@@ -31,7 +31,7 @@ export default function Produtos() {
   useEffect(() => {
     const chamadaApi = async () => {
       const response = await fetch(
-        "/src/app/api/base-notas/base-cps/"
+        "/api/base-notas/base-cps/"
       );
       const data = await response.json();
       setNotas(data);
