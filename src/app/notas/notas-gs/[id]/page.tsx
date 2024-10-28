@@ -69,7 +69,7 @@ export default function EditarNota({ params }: { params: { id: number } }) {
 
 
   return (
-    <main className="border px-[10%] py-[7vh] flex flex-col border-red-600 w-full">
+    <main className="px-[10%] py-[7vh] flex flex-col  w-full">
       <h2 className="text-xl font-bold mb-7">Atualizando Nota GS:</h2>
 
       <form className="w-full" onSubmit={handleSubmit}>

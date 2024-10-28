@@ -20,11 +20,11 @@ export default function Menu() {
           <Link href="/notas/notas-cs/cs">Challenge Sprints</Link>
         </li>
         <li>
-          <Link href="/notas/cad-notas" className="text-blue-500">Cadastro de Notas</Link>
+          <Link href="/notas/cad-notas/" className="text-blue-500">Cadastro de Notas</Link>
         </li>
       </ul>
       <ul className="sm:block lg:hidden w-[75%]">
-        <Link href="/menu-mobile">
+        <Link href="/menu-mobile/">
           <Image
             src={imagemMenu}
             className="w-full h-auto"
