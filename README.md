@@ -6,7 +6,7 @@ O projeto contém todo o portfólio de notas dos integrantes da QuantumLeap.
 
 ## **Link para o repositório no GitHub**: https://github.com/LucasAlmeida-cmd/CP6
 
-### Integrantes do Grupo:
+### Integrantes do Grupo - Turma 1TDSPY:
 - Arthur Eduardo Luna Pulini: RM 554848
 - Lucas Almeida Fernandes de Moraes: RM 557569
 - Victor Nascimento Cosme: RM 558856
